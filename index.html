@@ -8,7 +8,14 @@
   </head>
   <body ng-app="myApp" ng-controller="myCtrl">
     <div class="container">
-      {{firstName}} jhjg
+
+      <div class="row">
+        <div class="col-md-4">
+          <select ng-model="data.selectCity" ng-options="x for x in cityList" ng-change="fetchData()">
+          </select>
+        </div>
+
+      </div>
       <div class="row">
         <div class="col-md-4">
 
@@ -22,39 +29,36 @@
           <table class="table">
           <thead>
             <tr>
-              <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
+              <th scope="col">ID</th>
+              <th scope="col">NAME</th>
+              <th scope="col">IFSC</th>
+              <th scope="col">BRANCH</th>
+              <th scope="col">ADDRESS</th>
+              <th scope="col">DISTRICT</th>
+              <th scope="col">CITY</th>
+              <th scope="col">STATE</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
+            <tr ng-repeat = " i in bankList">
+              <td>{{i.bank_id}}</td>
+              <td>{{i.bank_name}}</td>
+              <td>{{i.ifsc}}</td>
+              <td>{{i.branch}}</td>
+              <td>{{i.address}}</td>
+              <td>{{i.district}}</td>
+              <td>{{i.city}}</td>
+              <td>{{i.state}}</td>
             </tr>
           </tbody>
         </table>
         </div>
       </div>
     </div>
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="index.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script> -->
   </body>
